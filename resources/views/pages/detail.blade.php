@@ -8,9 +8,9 @@
             @php
                 $gambar = json_decode($produk->gambar);
             @endphp
-            <img src="{{ isset($item->gambar) ? asset('storage/upload/produk/'.$gambar[0]) : null }}" class="object-cover w-full h-[450px] shadow-sm border" alt="">
+            <img src="{{ isset($produk->gambar) ? asset('storage/upload/produk/'.$gambar[0]) : null }}" class="object-cover w-full h-[450px] shadow-sm border" alt="">
             <div class="grid grid-cols-5 gap-4 mt-3 mb-3 pb-6">
-                @if (isset($item->gambar))
+                @if (isset($produk->gambar))
                 @if (count($gambar) > 1)
                 @for ($i = 0; $i < count($gambar); $i++)    
                 <img src="{{ asset('storage/upload/produk/'.$gambar[$i]) }}" class="object-cover w-full h-20 shadow-sm border hover:border hover:border-rose-600" alt="">
