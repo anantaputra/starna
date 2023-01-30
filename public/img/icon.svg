@@ -1,0 +1,8 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M40 0V0C62.0914 0 80 17.9086 80 40V60H40V0Z" fill="#FCA5A5"/>
+<path d="M40 60H80V120V120C57.9086 120 40 102.091 40 80V60Z" fill="#FEE2E2"/>
+<rect width="40" height="40" fill="#FEE2E2"/>
+<rect y="40" width="40" height="40" rx="20" fill="#FECACA"/>
+<rect y="80" width="40" height="40" fill="#FCA5A5"/>
+<path d="M80 40C80 17.9086 97.9086 0 120 0V0V80C120 102.091 102.091 120 80 120V120V40Z" fill="#FECACA"/>
+</svg>
