@@ -6,7 +6,7 @@
         <div>
             <p class="text-5xl font-bold text-rose-600 mb-4" style="font-family: 'Nunito', sans-serif;">Hubungi kami</p>
             <p class="text-gray-500 mb-8">Kirimkan kami saran mengenai produk maupun pelayanan kami untuk dapat memuaskan pelanggan.</p>
-            <form action="{{ route('pesan.kirim') }}" method="post" class="space-y-8">
+            <form action="{{ route('saran') }}" method="post" class="space-y-8">
                 @csrf
                 <div class="flex flex-col space-y-2">
                     <label for="name" class="text-lg font-semibold text-gray-600">Nama Anda</label>

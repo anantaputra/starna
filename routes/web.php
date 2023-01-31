@@ -16,6 +16,7 @@ use App\Http\Controllers\User\PasswordController;
 use App\Http\Controllers\Api\RajaOngkirController;
 use App\Http\Controllers\User\KeranjangController;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminInboxController;
 use App\Http\Controllers\Admin\AdminReturController;
 use App\Http\Controllers\User\TagihanUserController;
 use App\Http\Controllers\Admin\AdminProdukController;
@@ -43,6 +44,7 @@ Route::get('google', [GoogleController::class, 'redirectToGoogle'])->name('googl
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('google.callback');
 
 Route::middleware('auth')->group(function(){
+    Route::post('saran', [KontakController::class, 'saran'])->name('saran');
     Route::prefix('user')->name('user')->group(function(){
         Route::prefix('profil')->name('.profil')->group(function(){
             Route::get('/', [ProfilController::class, 'index']);
@@ -121,8 +123,9 @@ Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
         Route::post('simpan', [AdminProdukController::class, 'simpan'])->name('.simpan');
         Route::post('edit', [AdminProdukController::class, 'edit'])->name('.edit');
     });
-    Route::prefix('inbox')->name('.inbox')->group(function(){
-        Route::get('/');
+    Route::prefix('inbox')->group(function(){
+        Route::get('/', [AdminInboxController::class, 'index'])->name('admin.inbox');
+        Route::get('/lihat/{id}', [AdminInboxController::class, 'lihat'])->name('admin.inbox.lihat');
     });
     Route::prefix('pesanan')->name('.pesanan')->group(function(){
         Route::get('/', [AdminPesananController::class, 'index']);
