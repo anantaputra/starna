@@ -20,7 +20,7 @@ class PesananController extends Controller
         if(empty(auth()->user()->email_verified_at)){
             return redirect()->route('user.profil')->withErrors('verify', 'Verifikasi email untuk lanjutkan pemesanan');
         }
-        $hash = encrypt($request->uuid."|".$request->qty);
+        $hash = encrypt($request->produk."|".$request->qty);
 
         return redirect()->route('checkout', ['id' => $hash]);
     }
