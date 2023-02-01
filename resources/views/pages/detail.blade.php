@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="flex pt-8 space-x-4">
-                <form action="{{ route('keranjang.tambah') }}" method="post" class="w-full">
+                <form action="{{ route('keranjang.tambah') }}" method="post" class="w-auto">
                     @csrf
                     <input type="hidden" id="id-produk-cart" name="uuid" value="{{ $produk->uuid }}">
                     <input type="hidden" id="kuantitas-cart" name="qty" value="1">
