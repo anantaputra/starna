@@ -110,7 +110,7 @@
                     @php
                         $gambar = json_decode($item->produk->gambar);
                     @endphp
-                    <img src="{{ isset($item->gambar) ? asset('storage/upload/produk/'.$gambar[0]) : null }}" class="w-12 h-12" alt="">
+                    <img src="{{ isset($item->produk->gambar) ? asset('storage/upload/produk/'.$gambar[0]) : null }}" class="w-12 h-12" alt="">
                     <span class="">{{ $item->produk->nama_produk }}</span>
                 </div>
             </div>
