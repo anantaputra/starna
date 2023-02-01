@@ -61,14 +61,6 @@
                         <span>Masukkan Keranjang</span>
                     </button>
                 </form>
-                <form action="{{ route('pesan.sekarang') }}" method="post" class="w-full">
-                    @csrf
-                    <input type="hidden" id="id-produk-now" name="uuid" value="{{ $produk->uuid }}">
-                    <input type="hidden" id="kuantitas-now" name="qty" value="1">
-                    <button type="submit" class="w-full px-6 py-3.5 text-sm text-center font-bold tracking-wide text-white uppercase bg-rose-600 rounded">
-                        Pesan Sekarang
-                    </button>
-                </form>
             </div>
         </div>
     </div>
