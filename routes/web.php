@@ -124,8 +124,8 @@ Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
         Route::post('edit', [AdminProdukController::class, 'edit'])->name('.edit');
     });
     Route::prefix('inbox')->name('.inbox')->group(function(){
-        Route::get('/', [AdminInboxController::class, 'index'])->name('admin.inbox');
-        Route::get('/lihat/{id}', [AdminInboxController::class, 'lihat'])->name('admin.inbox.lihat');
+        Route::get('/', [AdminInboxController::class, 'index']);
+        Route::get('/lihat/{id}', [AdminInboxController::class, 'lihat'])->name('.lihat');
     });
     Route::prefix('pesanan')->name('.pesanan')->group(function(){
         Route::get('/', [AdminPesananController::class, 'index']);
