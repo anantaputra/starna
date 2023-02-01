@@ -294,7 +294,7 @@
                 @csrf
                 <input type="hidden" id="alamat-kirim" value="{{ $alamat[0]->id }}" name="alamat">
                 <input type="hidden" id="kirim-paket" name="paket">
-                <input type="hidden" value="{{ $produk->id_produk }}" name="produk">
+                <input type="hidden" value="{{ $produk->uuid }}" name="produk">
                 <input type="hidden" value="{{ $qty }}" name="qty">
                 <input type="hidden" id="metode_byr" name="metode_byr">
                 <input type="hidden" name="total">

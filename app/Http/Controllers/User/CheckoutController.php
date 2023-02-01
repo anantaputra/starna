@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         $provinsi = RajaOngkirController::semua_provinsi();
         $hash = decrypt($id);
         $data = explode('|', $hash);
-        $produk = Produk::find($data[0]);
+        $produk = Produk::find('uuid', $data[0])->first();
         $qty = $data[1];
         $berat = $produk->berat * $qty;
 
