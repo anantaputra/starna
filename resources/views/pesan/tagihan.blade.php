@@ -18,11 +18,11 @@
             <span>Metode Pembayaran:</span>
             <span class="text-rose-600 font-semibold">Bank {{ strtoupper($transaksi->metode) }}</span>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center font-bold">
             <span>Invoice</span>
         </div>
         <div class="flex justify-center">
-            <a href="{{ $transaksi->kode_bayar }}" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">Download Tagihan</a>
+            <a href="{{ $transaksi->kode_bayar }}" download="" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">Download Tagihan</a>
         </div>
         <div class="flex justify-between text-lg pb-16 pt-4">
             <span>Status Pembayaran:</span>
