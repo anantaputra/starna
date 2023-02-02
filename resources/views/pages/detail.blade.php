@@ -72,7 +72,6 @@
         if (qty > 1) {
             qty--;
             document.querySelector('#qty').value = qty;
-            document.querySelector('#kuantitas-now').value = qty;
             document.querySelector('#kuantitas-cart').value = qty;
         }
     }
@@ -82,7 +81,6 @@
         if (qty < stok) {
             qty++;
             document.querySelector('#qty').value = qty;
-            document.querySelector('#kuantitas-now').value = qty;
             document.querySelector('#kuantitas-cart').value = qty;
         }
     }
