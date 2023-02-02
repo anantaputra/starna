@@ -54,6 +54,12 @@
             </div>
         </div>
         <div class="flex justify-end">
+            <div class="flex space-x-2">
+                <div>Biaya Admin</div>
+                <div>Rp{{ number_format(3000, 0, 0, '.') }}</div>
+            </div>
+        </div>
+        <div class="flex justify-end">
             <div class="flex items-center space-x-2">
                 <div>Total</div>
                 <div class="text-rose-600 font-semibold text-lg">Rp{{ number_format($transaksi->total, 0, 0, '.') }}</div>
