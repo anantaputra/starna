@@ -80,7 +80,7 @@
                     <a href="{{ route('user.profil') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
                   </li>
                   <li>
-                    <a href="{{ route('user.tagihan') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Pesanan</a>
+                    <a href="{{ route('user.riwayat') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Pesanan</a>
                   </li>
                  @endif
                   <li>
