@@ -63,6 +63,10 @@ class KeranjangController extends Controller
             $produk = Produk::find($item->id_produk);
             $berat += $produk->berat * $item->jumlah;
         }
+        
+        if($berat > 30000){
+            return redirect()->back()->withErrors('overweight', 'Maaf maksimal berat pesanan yang dapat kami layani hanya 30 Kg');
+        }
 
         if(count($alamat) > 0){
             $jne = RajaOngkirController::get_ongkir($alamat[0]->kode_kota, 'jne', $berat);
