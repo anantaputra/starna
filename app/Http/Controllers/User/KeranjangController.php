@@ -65,7 +65,7 @@ class KeranjangController extends Controller
         }
         
         if($berat > 30000){
-            return redirect()->back()->withErrors('overweight', 'Maaf maksimal berat pesanan yang dapat kami layani hanya 30 Kg');
+            return redirect()->back()->withErrors(['overweight' => 'Maaf maksimal berat pesanan yang dapat kami layani hanya 30 Kg']);
         }
 
         if(count($alamat) > 0){
