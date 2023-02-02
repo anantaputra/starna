@@ -63,7 +63,7 @@
             </a>
             <button type="button" class="flex mr-3 text-sm bg-white rounded-full md:mr-0" id="user-menu-button" aria-expanded="false" type="button" data-dropdown-toggle="dropdown">
                 <span class="sr-only">Open user menu</span>
-                <img class="w-8 h-8 rounded-full" src="{{ (isset(auth()->user()->foto)) ? asset('upload/profil/'.auth()->user()->foto.'') : asset('img/user.svg') }}" alt="user photo">
+                <img class="w-8 h-8 rounded-full" src="{{ (isset(auth()->user()->foto)) ? asset('storage/upload/profil/'.auth()->user()->foto.'') : asset('img/user.svg') }}" alt="user photo">
             </button>
             <div class="hidden z-50 my-4 text-base list-none bg-white rounded divide-y divide-gray-100 shadow" id="dropdown">
                 <div class="py-3 px-4">

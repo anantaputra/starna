@@ -1,7 +1,7 @@
 <div class="fixed w-1/4 flex flex-col justify-between h-screen bg-white border-r">
   <div class="px-4 py-6">
     <a href="{{ route('user.profil') }}" class="flex items-center p-4 bg-white hover:bg-gray-50 shrink-0">
-        <img class="object-cover w-10 h-10 rounded-full" src="{{ (isset(auth()->user()->foto)) ? asset('upload/profil/'.auth()->user()->foto.'') : asset('img/user.svg') }}" alt=""/>
+        <img class="object-cover w-10 h-10 rounded-full" src="{{ (isset(auth()->user()->foto)) ? asset('storage/upload/profil/'.auth()->user()->foto.'') : asset('img/user.svg') }}" alt=""/>
 
         <div class="ml-2.5">
             <p class="text-xs">

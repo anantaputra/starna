@@ -107,7 +107,7 @@
             <button type="submit" class="text-white bg-rose-600 hover:bg-rose-500 focus:ring-0 focus:outline-none font-medium rounded-sm text-sm w-full sm:w-auto px-5 py-2.5 text-center">Simpan</button>
         </form>
         <div class="w-1/2 grid grid-cols-1 gap-5 place-content-center px-32 py-16">
-            <img class="w-56 h-56 rounded-full" src="{{ (isset(auth()->user()->foto)) ? asset('upload/profil/'.auth()->user()->foto.'') : asset('img/user.svg') }}" alt="">
+            <img class="w-56 h-56 rounded-full" src="{{ (isset(auth()->user()->foto)) ? asset('storage/upload/profil/'.auth()->user()->foto.'') : asset('img/user.svg') }}" alt="">
             <button class="w-24 flex items-center space-x-2 place-self-center px-4 py-1 border border-rose-600 rounded hover:bg-rose-600 hover:text-white" type="button" data-modal-toggle="defaultModal">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
