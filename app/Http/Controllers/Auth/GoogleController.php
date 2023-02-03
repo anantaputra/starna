@@ -36,7 +36,7 @@ class GoogleController extends Controller
                 } else {
                     $urutan = 1;
                 }
-                $id = 'USR-' . sprintf("%04s", $urutan);
+                $id = 'USR-' . sprintf("%05s", $urutan);
     
                 $new_user = new User();
                 $new_user->id_user = $id;
