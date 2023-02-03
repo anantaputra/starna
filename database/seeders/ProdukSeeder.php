@@ -56,7 +56,7 @@ class ProdukSeeder extends Seeder
                 'harga' => $hargaKeripik[$i],
                 'berat' => 300,
                 'deskripsi' => $deskKeripik[$i],
-                'gambar' => json_encode($gambarKeripik[$i]),
+                'gambar' => json_encode(array($gambarKeripik[$i])),
                 'stok' => rand(5, 15)
             ]);
         }
@@ -69,7 +69,7 @@ class ProdukSeeder extends Seeder
                 'harga' => $hargaKacang[$i],
                 'berat' => 300,
                 'deskripsi' => $deskKacang[$i],
-                'gambar' => json_encode($gambarKacang[$i]),
+                'gambar' => json_encode(array($gambarKacang[$i])),
                 'stok' => rand(5, 15)
             ]);
         }
@@ -82,7 +82,7 @@ class ProdukSeeder extends Seeder
                 'harga' => $hargaStik[$i],
                 'berat' => 300,
                 'deskripsi' => $deskStik[$i],
-                'gambar' => json_encode($gambarStik[$i]),
+                'gambar' => json_encode(array($gambarStik[$i])),
                 'stok' => rand(5, 15)
             ]);
         }
@@ -95,7 +95,7 @@ class ProdukSeeder extends Seeder
                 'harga' => $hargaKerupuk[$i],
                 'berat' => 300,
                 'deskripsi' => $deskKerupuk[$i],
-                'gambar' => json_encode($gambarKerupuk[$i]),
+                'gambar' => json_encode(array($gambarKerupuk[$i])),
                 'stok' => rand(5, 15)
             ]);
         }
@@ -108,7 +108,7 @@ class ProdukSeeder extends Seeder
                 'harga' => $hargaCemilan[$i],
                 'berat' => 300,
                 'deskripsi' => $deskCemilan[$i],
-                'gambar' => json_encode($gambarCemilan[$i]),
+                'gambar' => json_encode(array($gambarCemilan[$i])),
                 'stok' => rand(5, 15)
             ]);
         }
