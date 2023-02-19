@@ -4,7 +4,16 @@
 
 <div class="w-full py-8">
     <div class="flex justify-between">
-        <span class="text-2xl">Daftar Pesanan Masuk</span>
+        <div>
+            <span class="text-2xl">Daftar Pesanan Masuk</span>
+        </div>
+        <div class="flex space-x-2 items-center">
+            <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Status</label>
+            <select id="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 pl-3 pr-8">
+              <option value="pending">Belum Dikirim</option>
+              <option value="send">Dikirim</option>
+            </select>
+        </div>
     </div>
     <div class="w-full border border-gray-600 rounded mt-8">
         <table class="w-full text-sm divide-y divide-gray-600">
@@ -21,7 +30,7 @@
             </tr>
           </thead>
       
-          <tbody class="divide-y divide-gray-600 bg-white">
+          <tbody class="divide-y divide-gray-600 bg-white" id="tbody">
             @if (isset($pesanan))
                 @php
                     $no = 1;
@@ -67,4 +76,24 @@
     </div>
 </div>
 
+@endsection
+
+@section('js')
+    <script>
+      $(document).ready(function() {
+        $('#status').change(function() {
+          $.ajax({
+            url: '{{ route("admin.pesanan.filter") }}',
+            type: 'get',
+            data: {
+              status: $('#status').val()
+            },
+            success: function(response) {
+              $('#tbody').html(``);
+              $('#tbody').html(response);
+            }
+          })
+        })
+      })
+    </script>
 @endsection

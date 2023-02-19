@@ -31,7 +31,7 @@
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Total Pesanan</h5>
                 </div>
                 @php
-                    $pesanan = App\Models\Pesanan::count();
+                    $pesanan = App\Models\Transaksi::with('pesanan')->where('status', 'settlement')->count();
                 @endphp
                 <p class="mb-3 font-normal text-3xl text-gray-700">{{ $pesanan }} Pesanan</p>
             </div>

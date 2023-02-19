@@ -15,9 +15,14 @@ class TagihanUserController extends Controller
     
     public function index()
     {
-        $tagihan = Transaksi::with(['pesanan' => function ($q) {
-            $q->where('id_user', auth()->user()->id_user);
-        }])->where('status', 'pending')->get();
+        // $tagihan = Transaksi::with(['pesanan' => function ($q) {
+        //     $q->where('id_user', auth()->user()->id_user);
+        // }])->where('status', 'pending')->get();
+        $tagihan = Transaksi::with('pesanan')
+                    ->whereHas('pesanan', function ($q) {
+                        $q->where('id_user', auth()->user()->id_user);
+                    })->where('status', 'pending')
+                    ->get();
         
         return view('user.tagihan', compact('tagihan'));
     }
@@ -38,9 +43,14 @@ class TagihanUserController extends Controller
 
     public static function jmlTagihan()
     {
-        $tagihan = Transaksi::with(['pesanan' => function($q){
-            $q->where('id_user', auth()->user()->id_user);
-        }])->where('status', 'pending')->get();
+        // $tagihan = Transaksi::with(['pesanan' => function($q){
+        //     $q->where('id_user', auth()->user()->id_user);
+        // }])->where('status', 'pending')->get();
+        $tagihan = Transaksi::with('pesanan')
+                    ->whereHas('pesanan', function ($q) {
+                        $q->where('id_user', auth()->user()->id_user);
+                    })->where('status', 'pending')
+                    ->get();
 
         return count($tagihan);
     }

@@ -129,6 +129,7 @@ Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
     });
     Route::prefix('pesanan')->name('.pesanan')->group(function(){
         Route::get('/', [AdminPesananController::class, 'index']);
+        Route::get('filter', [AdminPesananController::class, 'filter'])->name('.filter');
         Route::get('detail/{id}', [AdminPesananController::class, 'detail'])->name('.detail');
         Route::post('resi', [AdminPesananController::class, 'resi'])->name('.resi');
     });
