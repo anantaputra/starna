@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\Pesanan;
 use App\Models\Keranjang;
 use App\Models\Transaksi;
@@ -52,7 +53,7 @@ class AdminPesananController extends Controller
                 <td class="px-4 py-5 text-gray-700"><?= $item->pesanan->alamat->alamat.', '.$item->pesanan->alamat->kota.', '.$item->pesanan->alamat->provinsi; ?></td>
                 <td class="px-4 py-5 text-gray-700"><?= $jasa; ?></td>
                 <td class="px-4 py-5 text-gray-700"><?= $estimasi; ?></td>
-                <td class="px-4 py-5 text-gray-700"><?= Carbon\Carbon::parse($item->pesanan->created_at)->format('d M Y'); ?></td>
+                <td class="px-4 py-5 text-gray-700"><?= Carbon::parse($item->pesanan->created_at)->format('d M Y'); ?></td>
                 <td class="px-4 py-5 text-gray-700 text-center whitespace-nowrap">
                     <?php if($item->pesanan->resi != null) {
                         echo 'Dikirim';

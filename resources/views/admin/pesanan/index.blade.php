@@ -12,6 +12,7 @@
             <select id="status" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 pl-3 pr-8">
               <option value="pending">Belum Dikirim</option>
               <option value="send">Dikirim</option>
+              <option value="accepted">Diterima</option>
             </select>
         </div>
     </div>
