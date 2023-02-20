@@ -26,7 +26,7 @@ class AdminTransaksiController extends Controller
                 foreach($transaksi as $item) {
             ?>
             <tr>
-                <td class="px-4 py-5 font-medium text-gray-900"><?= $no ?></td>
+                <td class="px-4 py-5 font-medium text-gray-900"><?= $no++ ?></td>
                 <td class="px-4 py-5 text-gray-700 whitespace-nowrap"><?= $item->pesanan->user->nama_depan ?></td>
                 <td class="px-4 py-5 text-gray-700 whitespace-nowrap">Rp<?= number_format($item->total, 0, '', '.') ?></td>
                 <td class="px-4 py-5 text-gray-700 whitespace-nowrap"><?= Carbon::parse($item->updated_at)->format('d M Y') ?></td>
