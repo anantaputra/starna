@@ -11,7 +11,7 @@ class AdminTransaksiController extends Controller
 {
     public function index()
     {
-        $transaksi = Transaksi::all()->orderBy('updated_at', 'DESC');
+        $transaksi = Transaksi::orderBy('updated_at', 'DESC')->get();
         return view('admin.transaksi.index', compact('transaksi'));
     }
 
