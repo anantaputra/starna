@@ -14,7 +14,7 @@
           <input type="date" id="akhir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
       </div>
     </div>
-    <div class="w-full border border-gray-600 rounded mt-8">
+    <div class="w-full border border-gray-600 rounded mt-8" id="filter">
         <table class="w-full text-sm divide-y divide-gray-600">
           <thead>
             <tr class="bg-gray-50">
@@ -46,9 +46,9 @@
             @endif
           </tbody>
         </table>
-    </div>
-    <div class="my-3">
-      {{$transaksi->links()}}
+        <div class="my-3">
+          {{$transaksi->links()}}
+        </div>
     </div>
 </div>
 
@@ -69,8 +69,8 @@
                 akhir: akhir
               },
               success: function(response) {
-                $('#tbody').html(``);
-                $('#tbody').html(response);
+                $('#filter').html(``);
+                $('#filter').html(response);
               }
             })
           }
@@ -87,8 +87,8 @@
                 akhir: akhir
               },
               success: function(response) {
-                $('#tbody').html(``);
-                $('#tbody').html(response);
+                $('#filter').html(``);
+                $('#filter').html(response);
               }
             })
           }
