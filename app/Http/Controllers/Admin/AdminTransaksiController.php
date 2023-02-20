@@ -19,7 +19,6 @@ class AdminTransaksiController extends Controller
     {
         $transaksi = Transaksi::whereBetween('created_at', [$request->mulai, $request->akhir])
                     ->orderBy('updated_at', 'DESC')
-                    ->get()
                     ->paginate(10);
 
             if (isset($transaksi)) {
