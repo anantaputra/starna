@@ -149,9 +149,11 @@ Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
         });
         Route::prefix('transaksi')->name('.transaksi')->group(function(){
             Route::get('/', [AdminLaporanController::class, 'transaksi']);
+            Route::get('cetak', [AdminLaporanController::class, 'cetak_transaksi'])->name('.print');
         });
         Route::prefix('retur')->name('.retur')->group(function(){
             Route::get('/', [AdminLaporanController::class, 'retur']);
+            Route::get('cetak', [AdminLaporanController::class, 'cetak_retur'])->name('.print');
         });
     });
 });

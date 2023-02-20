@@ -27,9 +27,21 @@ class AdminLaporanController extends Controller
         return view('admin.laporan.retur', compact('retur'));
     }
 
+    public function cetak_retur()
+    {
+        $retur = Retur::all();
+        return view('admin.laporan.cetak-retur', compact('retur'));
+    }
+
     public function transaksi()
     {
         $transaksi = Transaksi::all();
         return view('admin.laporan.transaksi', compact('transaksi'));
+    }
+
+    public function cetak_transaksi()
+    {
+        $transaksi = Transaksi::all();
+        return view('admin.laporan.cetak-transaksi', compact('transaksi'));
     }
 }
