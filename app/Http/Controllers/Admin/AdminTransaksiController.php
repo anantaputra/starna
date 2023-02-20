@@ -11,7 +11,7 @@ class AdminTransaksiController extends Controller
 {
     public function index()
     {
-        $transaksi = Transaksi::orderBy('updated_at', 'DESC')->get();
+        $transaksi = Transaksi::orderBy('updated_at', 'DESC')->paginate(10);
         return view('admin.transaksi.index', compact('transaksi'));
     }
 
@@ -19,7 +19,7 @@ class AdminTransaksiController extends Controller
     {
         $transaksi = Transaksi::whereBetween('created_at', [$request->mulai, $request->akhir])
                     ->orderBy('updated_at', 'DESC')
-                    ->get();
+                    ->paginate(10);
 
             if (isset($transaksi)) {
                 $no = 1;

@@ -57,6 +57,9 @@
             @endif
           </tbody>
         </table>
+    </div>  
+    <div class="my-3">
+      {{$retur->links()}}
     </div>
 </div>
 

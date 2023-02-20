@@ -11,7 +11,7 @@ class AdminLaporanController extends Controller
 {
     public function pesanan()
     {
-        $pesanan = Transaksi::with('pesanan')->where('status', 'settlement')->get();
+        $pesanan = Transaksi::with('pesanan')->where('status', 'settlement')->paginate(10);
         return view('admin.laporan.pesanan', compact('pesanan'));
     }
 
@@ -23,7 +23,7 @@ class AdminLaporanController extends Controller
 
     public function retur()
     {
-        $retur = Retur::all();
+        $retur = Retur::paginate(10);
         return view('admin.laporan.retur', compact('retur'));
     }
 
@@ -35,7 +35,7 @@ class AdminLaporanController extends Controller
 
     public function transaksi()
     {
-        $transaksi = Transaksi::all();
+        $transaksi = Transaksi::paginate(10);
         return view('admin.laporan.transaksi', compact('transaksi'));
     }
 
