@@ -56,6 +56,9 @@
             @endif
           </tbody>
         </table>
+        <div class="my-3">
+          {{$produk->links()}}
+        </div>
     </div>
 </div>
     
