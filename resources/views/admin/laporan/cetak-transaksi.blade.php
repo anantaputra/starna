@@ -16,7 +16,7 @@
 <body>
     <div class="row">
         <div class="col-10 text-center">
-            <h3>Laporan Pesanan Nasywa Snack</h3>
+            <h3>Laporan Transaksi Nasywa Snack</h3>
         </div>
         <div class="col-12 mt-3 mb-5">
             <div class="garis"></div>
