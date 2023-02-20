@@ -44,20 +44,17 @@
                     <td>{{ $item->pesanan->id_pesanan }}</td>
                     <td>{{ $item->user->nama_depan }}</td>
                     <td>{{ $item->keterangan }}</td>
+                    <td></td>
                     <td>
-                        
-                    </td>
-                    <td>
-                        <td class="px-4 py-5 text-gray-700 whitespace-nowrap">
-                            @if ($item->status == 'pending')
-                                Sedang Diproses
-                            @elseif ($item->status == 'accepted')
-                                Diterima
-                            @elseif ($item->status == 'denied')
-                                Ditolak
-                            @else
-                                Dibatalkan
-                            @endif
+                        @if ($item->status == 'pending')
+                            Sedang Diproses
+                        @elseif ($item->status == 'accepted')
+                            Diterima
+                        @elseif ($item->status == 'denied')
+                            Ditolak
+                        @else
+                            Dibatalkan
+                        @endif
                     </td>
                 </tr>
                 @endforeach
