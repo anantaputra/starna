@@ -75,7 +75,7 @@
         $('#akhir').change(function() {
           var mulai = $('#mulai').val();
           var akhir = $('#akhir').val();
-          if(akhir != ''){
+          if(mulai != ''){
             $.ajax({
               url: '{{route("admin.transaksi.filter")}}',
               type: 'GET',
