@@ -135,6 +135,7 @@ Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
     });
     Route::prefix('transaksi')->name('.transaksi')->group(function(){
         Route::get('/', [AdminTransaksiController::class, 'index']);
+        Route::get('filter', [AdminTransaksiController::class, 'filter'])->name('.filter');
     });
     Route::prefix('retur')->name('.retur')->group(function(){
         Route::get('/', [AdminReturController::class, 'index']);

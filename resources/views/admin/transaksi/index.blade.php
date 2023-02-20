@@ -4,7 +4,15 @@
     
 <div class="w-full py-8">
     <div class="flex justify-between">
+      <div>
         <span class="text-2xl">Daftar Transaksi</span>
+      </div>
+      <div class="flex space-x-2 items-center">
+          <label for="status" class="block mb-2 text-sm font-medium text-gray-900">Filter:</label>
+          <input type="date" id="mulai" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+          <label for="status" class="block mx-2 mb-2 text-sm font-medium text-gray-900">s.d</label>
+          <input type="date" id="akhir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+      </div>
     </div>
     <div class="w-full border border-gray-600 rounded mt-8">
         <table class="w-full text-sm divide-y divide-gray-600">
@@ -18,7 +26,7 @@
             </tr>
           </thead>
       
-          <tbody class="divide-y divide-gray-600 bg-white">
+          <tbody class="divide-y divide-gray-600 bg-white" id="tbody">
             @if (isset($transaksi))
                 @php
                     $no = 1;
@@ -41,4 +49,47 @@
     </div>
 </div>
 
+@endsection
+
+@section('js')
+    <script>
+      $(document).ready(function() {
+        $('#mulai').change(function() {
+          var mulai = $('#mulai').val();
+          var akhir = $('#akhir').val();
+          if(akhir != ''){
+            $.ajax({
+              url: '{{route("admin.transaksi.filter")}}',
+              type: 'GET',
+              data: {
+                mulai: mulai,
+                akhir: akhir
+              },
+              success: function(response) {
+                $('#tbody').html(``);
+                $('#tbody').html(response);
+              }
+            })
+          }
+        })
+        $('#akhir').change(function() {
+          var mulai = $('#mulai').val();
+          var akhir = $('#akhir').val();
+          if(akhir != ''){
+            $.ajax({
+              url: '{{route("admin.transaksi.filter")}}',
+              type: 'GET',
+              data: {
+                mulai: mulai,
+                akhir: akhir
+              },
+              success: function(response) {
+                $('#tbody').html(``);
+                $('#tbody').html(response);
+              }
+            })
+          }
+        })
+      })
+    </script>
 @endsection
