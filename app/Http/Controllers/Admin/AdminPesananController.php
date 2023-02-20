@@ -18,7 +18,7 @@ class AdminPesananController extends Controller
                     })
                     ->where('status', 'settlement')
                     ->orderBy('created_at', 'DESC')
-                    ->get();
+                    ->paginate(10);
         
         return view('admin.pesanan.index', compact('pesanan'));
     }
@@ -30,7 +30,7 @@ class AdminPesananController extends Controller
             })
             ->where('status', 'settlement')
             ->orderBy('created_at', 'DESC')
-            ->get();
+            ->paginate(10);
 
             if (isset($pesanan)) {
                 $no = 1;

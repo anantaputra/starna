@@ -47,6 +47,9 @@
           </tbody>
         </table>
     </div>
+    <div class="my-3">
+      {{$pesanan->links()}}
+    </div>
 </div>
 
 @endsection
