@@ -15,6 +15,12 @@ class AdminLaporanController extends Controller
         return view('admin.laporan.pesanan', compact('pesanan'));
     }
 
+    public function cetak_pesanan()
+    {
+        $pesanan = Transaksi::with('pesanan')->where('status', 'settlement')->get();
+        return view('admin.laporan.cetak-pesanan', compact('pesanan'));
+    }
+
     public function retur()
     {
         $retur = Retur::all();

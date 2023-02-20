@@ -145,6 +145,7 @@ Route::prefix('admin')->name('admin')->middleware('auth')->group(function(){
     Route::prefix('laporan')->name('.laporan')->group(function(){
         Route::prefix('pesanan')->name('.pesanan')->group(function(){
             Route::get('/', [AdminLaporanController::class, 'pesanan']);
+            Route::get('cetak', [AdminLaporanController::class, 'cetak_pesanan'])->name('.print');
         });
         Route::prefix('transaksi')->name('.transaksi')->group(function(){
             Route::get('/', [AdminLaporanController::class, 'transaksi']);
