@@ -33,6 +33,23 @@ class AdminPesananController extends Controller
             ->paginate(10);
 
             if (isset($pesanan)) {
+                ?>
+                <table class="w-full text-sm divide-y divide-gray-600">
+                    <thead>
+                        <tr class="bg-gray-50">
+                        <th class="px-4 py-4 font-medium text-left text-gray-900">No</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap">Nama Penerima</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900">Alamat Penerima</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900">Jasa Pengiriman</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap">Estimasi Pengiriman</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap">Tanggal Pesan</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900">Status</th>
+                        <th class="px-4 py-4 font-medium text-left text-gray-900 whitespace-nowrap flex justify-center">Aksi</th>
+                        </tr>
+                    </thead>
+                
+                    <tbody class="divide-y divide-gray-600 bg-white" id="tbody">
+                <?php
                 $no = 1;
                 foreach($pesanan as $item) {
                   $pengiriman = $item->pesanan->pengiriman;
@@ -74,6 +91,13 @@ class AdminPesananController extends Controller
             </tr>
             <?php
                 }
+                ?>
+                    </tbody>
+                </table>   
+                <div class="my-3">
+                <?= $pesanan->links() ?>
+                </div>
+                <?php
             }
     }
 

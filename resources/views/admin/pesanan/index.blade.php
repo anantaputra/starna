@@ -16,7 +16,7 @@
             </select>
         </div>
     </div>
-    <div class="w-full border border-gray-600 rounded mt-8">
+    <div class="w-full border border-gray-600 rounded mt-8" id="filter">
         <table class="w-full text-sm divide-y divide-gray-600">
           <thead>
             <tr class="bg-gray-50">
@@ -73,11 +73,11 @@
                 @endforeach
             @endif
           </tbody>
-        </table>
-    </div>    
-    <div class="my-3">
-      {{$pesanan->links()}}
-    </div>
+        </table>   
+        <div class="my-3">
+          {{$pesanan->links()}}
+        </div>
+    </div> 
 </div>
 
 @endsection
@@ -93,8 +93,8 @@
               status: $('#status').val()
             },
             success: function(response) {
-              $('#tbody').html(``);
-              $('#tbody').html(response);
+              $('#filter').html(``);
+              $('#filter').html(response);
             }
           })
         })
